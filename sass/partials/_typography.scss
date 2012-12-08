@@ -1,0 +1,107 @@
+// ====== Global Type ======//
+
+body {
+    font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2", "Adobe Garamond Pro", Garamond, serif;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    @include respond-to(medium-screens){
+        font-size: $med-font-size;
+        line-height: $med-line-height;
+    }
+    @include respond-to(wide-screens){
+        font-size: $large-font-size;
+        line-height: $large-line-height;
+    }
+}
+
+a {
+    color: #FB7C2F;
+    text-decoration: none;
+}
+
+// ====== Other ====== //
+
+blockquote {
+    font-style: italic;
+    font-weight: 400;
+    padding: .5em .5em .5em 1em;
+    border-left: 2px solid $secondary;
+    margin: 1em 0;
+    color: $secondary;
+    background: tint($secondary, 93);
+
+}
+
+p, pre{
+    margin: 0;
+}
+
+pre{
+    padding: 1em;
+    color: $secondary;
+    border: 1px solid $tertiary;
+    background: tint($secondary, 93);
+    margin-bottom: 1em;
+}
+
+p+p {
+    text-indent: 1em;
+}
+
+
+time {
+    font-size: .9em;
+    letter-spacing: 1px;
+    color: #999999;
+}
+
+//====== Headings ======//
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "source-sans-pro-1","source-sans-pro-2", Helvetica Neue, Helvetica, serif; 
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 1.4em;
+    margin: 0 0 1em 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 1em;
+    margin-bottom: 0.4em;
+}
+
+h3 {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+    font-size: 1.3333em;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5em;
+}
+
+h4 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1111em;
+    line-height: 1.5em;
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
+}
+
+h5 {
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.6em;
+    color: #666666;
+    font-size: 18px;
+    margin-bottom: 0.4em;
+}

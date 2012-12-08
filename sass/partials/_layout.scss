@@ -1,0 +1,20 @@
+body{
+	padding: 0 $gutter;
+}
+
+.wrap{
+	max-width: $max-width;
+	margin: 0 auto;
+}
+
+.border{
+	&.bottom{
+		border-bottom: .25em solid $tertiary;
+	}
+}
+
+nav ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}

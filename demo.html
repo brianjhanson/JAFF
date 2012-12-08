@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="stylesheets/screen.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+        <!-- Typekit -->
+        <script type="text/javascript" src="//use.typekit.net/bzw1snh.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    </head>
+    <body>
+      <!--[if lt IE 7]>
+          <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+      <![endif]-->
+
+      <div class="wrap">
+        <div class="row">
+          <header>
+            <div class="col-3">
+              <h1>JAFF</h1>
+              <nav role="main">
+                <ul class="">
+                  <li><a href="#">Typography</a></li>
+                  <li><a href="#">The Grid</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+
+          <section class="content col-9">
+            <time>OCTOBER 17, 2012</time>
+            <h1 class="border bottom">David Walsh on Redesigning with Sass</h1>
+            
+            <blockquote>The following post is by David Walsh. David is a web developer from my own hometown of Madison, Wisconsin and currently working for Mozilla. David recently redesigned his blog and is having a series of guests write posts for his site. We decided to do it crossover style: he writes an article for CSS-Tricks and I'll write an article for the David Walsh blog. He used Sass in his redesign and his article below is about that experience. I've been using it for closer to a year, so my post on his site is about that experience.</blockquote>
+            <p>Creating any website without using a CSS preprocessor seems a horrible decision.  Even if only to be able to quickly modify a few colors or element dimensions, or even just to easily merge and compress CSS files, CSS preprocessors are becoming essential.  For my recent redesign of the David Walsh Blog, I decided now was the time to dive face first into CSS preprocessors.  Here are a few thoughts about my experience, and hopefully you pick up a few tips along the way.</p>
+            <h2>Deciding to be Sassy</h2>
+            <p>There's not much a decision to be made about whether or not to use a tool like Sass or LESS, the questions is more of which should be used. In the end, I chose Sass because: my experiences with LESS have been ... less than appealing; the tool seems ... less maintaineda utility like Compass, a collection of mixins with an updater, is invaluablethe extend() API looked greatembedding media query styles within a selector improves organizationsprite generation is a huge time-saver Chris Coyier told me to!</p>
+            <p>When you author a blog like David Walsh Blog or CSS-Tricks, learning a new CSS utility also presents the perfect opportunity to write about another useful topic. Using Sass on this project was obviously the best choice.</p>
+            <h3>Useful Snippets</h3>
+            <p>Here are a few of the Sass snippets I used often on my site:</p>
+            <h4>Vendor Prefixing</h4>
+            <pre>@mixin vendorize($property, $value) {
+                -webkit-#{$property}: $value;
+                -moz-#{$property}: $value;
+                -ms-#{$property}: $value;
+                -o-#{$property}: $value;
+                #{$property}: $value;
+            }
+            </pre>
+            <h4>Float Clearing</h4>
+            <pre>@mixin clear() {
+      &:before, &:after {
+            content: "\0020";
+            display: block;
+            height: 0;
+            overflow: hidden;
+        }
+        &:after {
+            clear: both;
+        }
+            }</pre>
+            <h4>Offscreen Text</h4>
+            <pre>@mixin linkTextOffscreen() {
+            text-indent: -9999px;
+            overflow: hidden;
+            text-decoration: none;
+            display: block;
+            font-size: 0;
+            text-align: start;
+            }
+            :hover, :active, :focus Styles
+            @mixin hoverActiveFocus($property, $value) {
+            &:hover, &:active, &:focus {
+            #{$property}: $value;
+            }
+            }</pre>
+            <p>I used these mixins quite a bit throughout my code. A few of my snippets mimic functionality provided by Compass, but I like seeing the specific styles provided by mixins.</p>
+            <h3>Mistakes, Mistakes</h3>
+            <p>As with using any tool for the first time, I made quite a few mistakes.  Mistakes are healthy though - you learn from them and write about them so others don't take those same missteps.  Mistakes I made include:</p>
+            <p><b>Nesting == Bloat:</b>  The biggest mistake I made with Sass, by far, was nesting styles when they didn't need to be.  At the time of launch, my main CSS file was a vomit-inducing 59k!  I'm still working toward reducing the size of my styles, and it's a much more difficult task now that the site has launched because of......Specificity Clashes:  Because of my issue with nesting styles when I didn't need to, I ran into a bunch of specificity clashes, bloating my CSS file even further.  When it got to the screen size media query CSS, I was needing to mark everything as !important.  That's an incredible amount of CSS bloat and hassle because of improperly using SASS selector nesting.Sprite Generation... Too Late:  One of the big reasons I chose SASS was because I knew SASS managed sprite generation.  What a time-saver, right?  Well, only as long as you knew how to format them in the first place.  My problem was that I created my CSS with normal background-image declarations, without paying attention to SASS' desired format.  I went to create my sprites after knowing the correct format and said "WTF FML".  In the end, I created my own sprites because I didn't write my SASS correctly in the first place.  Very annoying mistake.Duplicating Compass-provided Helpers:  I don't need to cite them... I'm more than certain I duplicated functionality provided by Compass.  I'll likely pay for it later if I don't update my code and stay aware of browser capabilities.</p>
+            <h2>Tips and Last Impressions</h2>
+            <p>I want to leave everyone with a few tips for getting started with SASS, and share a few last impressions of Sass development: Despite my duplication of Sass-provided functionality and nesting issues, Sass is an incredible tool that, accompanied by Compass, provides the ultimate tool+updating environment available.When nesting selectors, ask yourself if it's really necessary to do so.  Sure nesting also allows for better code organization, but a bloated stylesheet makes all of your users suffer.Create variables for your CSS animation properties, especially duration and delay. Consistent animation timing ensures eye-pleasing UI effects.Create variables for block padding, and use simple equations ($blockPadding/2) for lessor blocks. This ensures consistent element spacing.You can nest media queries for selectors but I prefer creating a separate file for mobile / media query-specific styles;  it allows me to see the entire set of mobile styles in one glance. The same could be said for my print styles.I used these directions to add Sass syntax highlighting to Sublime Text 2.Keep track of your CSS file size(s) while you code, and periodically review your nesting strategy to avoid style bloat.Utilize CSS animations as best you can -- they can save you a load of JavaScript code down the road.</p>
+            <p>In the end, I'm incredibly happy with my decision to use Sass as my CSS preprocessor.  The documentation is helpful, you can get up and running in a few minutes, and Compass is an invaluable tool in so many ways.  My only problems with SASS were self-inflicted, and will be easily avoidable the next time around.  Give Sass a chance for your next website or redesign - its usefulness is immeasurable and will pay off for the duration of your project.</p>
+          </section>
+        </div><!-- end .row -->
+      </div><!-- end .wrap -->
+
+        
+
+
+        <!-- Only scripts below here -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
