@@ -1,4 +1,4 @@
-/*! starter - v0.1.0 - 2014-01-04
+/*! Just Another Fucking Framework - v0.1.0 - 2014-01-04
 * www.example.com
 * Copyright (c) 2014 Brian Hanson; Licensed  */
 /*! jQuery v1.10.2 | (c) 2005, 2013 jQuery Foundation, Inc. | jquery.org/license
