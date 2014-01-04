@@ -1,0 +1,30 @@
+@import "defaults"; // Sets some defaults, don't touch this one
+
+// ------------------------------------------------------------------------
+// Settings
+// This is where you set up the basics
+// ------------------------------------------------------------------------
+	@import "settings"; // Override those defaults as needed here
+
+// ------------------------------------------------------------------------
+// Vendor
+// Did you write it? if not, put it here
+// ------------------------------------------------------------------------
+	@import "vendor/normalize";
+	// @import "vendor/reset";
+
+// ------------------------------------------------------------------------
+// Generic
+// Project agnostic stuff goes here
+// ------------------------------------------------------------------------
+
+	// Helpers
+	@import "generic/clearfix";
+	@import "generic/hide";
+	@import "generic/selections";
+	@import "generic/image-replacement";
+
+// ------------------------------------------------------------------------
+// Objects
+// Project specific objects go here
+// ------------------------------------------------------------------------
