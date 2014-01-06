@@ -1,0 +1,40 @@
+// Colors
+	$selection-color: #b3d4fc;
+	$secondary-color: #e8e8e8;
+
+// Document Defaults
+	$doc-font-size: 16;
+	$doc-line-height: 1.6;
+	$doc-radius: 3;
+
+// Modular Scale
+	$ms-primary: 16/$doc-font-size;
+	$ms-secondary: 300/$doc-font-size;
+
+	$ms-base: $ms-primary * 1em, $ms-secondary * 1em;
+	$ms-ratio: $fifth;
+
+// Headings
+	@debug ms-list(0, 24, $ms-base, $ms-ratio);
+
+	// Biggest stuff
+		$giga-size: ms(8);
+		$mega-size: ms(7);
+		$super-size: ms(6);
+
+	// Usual suspects
+		$h1-size: ms(5);
+		$h2-size: ms(4);
+		$h3-size: ms(3);
+		$h4-size: ms(2);
+		$h5-size: ms(1);
+		$h6-size: ms(0);
+
+	// Small stuff
+		$small-size: $doc-font-size - 2px;
+		$micro-size: $doc-font-size - 4px;
+
+// Grid
+	$row-width: 1000;
+	$grid-columns: 12;
+	$grid-gutter: 30;

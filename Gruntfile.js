@@ -73,6 +73,15 @@ module.exports = function(grunt) {
         src: ['src/scripts/**/*.coffee']
       },
     },
+    pixrem: {
+      options: {
+        rootvalue: '100%' // Set this to be the same as your stylesheet
+      },
+      dist: {
+        src: 'dist/styles/<%= pkg.name %>.min.css',
+        dest: 'dist/styles/<%= pkg.name %>.min.css'
+      }
+    },
     jshint: {
       options: {
         curly: true,
@@ -139,10 +148,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-pixrem');
 
   // Default task.
   grunt.registerTask('default', []);
   grunt.registerTask('buildscripts', ['coffee_jshint', 'coffee', 'concat', 'uglify']);
-  grunt.registerTask('buildstyles', ['sass', 'autoprefixer']);
+  grunt.registerTask('buildstyles', ['sass', 'autoprefixer','pixrem']);
   grunt.registerTask('optimizeimages', ['imagemin']);
 };

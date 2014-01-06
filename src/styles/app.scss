@@ -1,10 +1,9 @@
-@import "defaults"; // Sets some defaults, don't touch this one
+// More meaningful typography
+// https://github.com/Team-Sass/modular-scale
+@import "vendor/modular-scale";
 
-// ------------------------------------------------------------------------
-// Settings
-// This is where you set up the basics
-// ------------------------------------------------------------------------
-	@import "settings"; // Override those defaults as needed here
+// Sets some defaults, don't touch this one
+@import "vars";
 
 // ------------------------------------------------------------------------
 // Vendor
@@ -24,7 +23,16 @@
 	@import "generic/selections";
 	@import "generic/image-replacement";
 
+	@import "generic/functions";
+	@import "generic/mixins";
+
+	// Layout
+	@import "generic/grid";
+
 // ------------------------------------------------------------------------
 // Objects
 // Project specific objects go here
 // ------------------------------------------------------------------------
+
+	@import "objects/typography";
+	@import "objects/island";
