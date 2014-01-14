@@ -17,8 +17,8 @@
 	width: 100%;
 	margin-bottom: $doc-margin;
 	.row &{
-		padding-left: $grid-gutter;
-		padding-right: $grid-gutter;
+		padding-left: $grid-gutter / 2;
+		padding-right: $grid-gutter / 2;
 	}
 }
 
