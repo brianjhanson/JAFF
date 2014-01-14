@@ -48,7 +48,7 @@
 // Grid
 	$row-width: 60rem;
 	$grid-columns: 12;
-	$grid-gutter: .5rem;
+	$grid-gutter: rem-calc(30);
 
 // Breakpoints
 	$med-start: 500; // These can be in px because our mixin converts to ems

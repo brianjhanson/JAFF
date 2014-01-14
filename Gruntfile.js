@@ -118,17 +118,24 @@ module.exports = function(grunt) {
       files: ['test/**/*.html']
     },
     watch: {
+
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile', 'buildscripts', 'buildstyles','optimizeimages']
       },
       scripts:{
         files: ['src/scripts/**/*.js', 'src/scripts/**/*.coffee'],
-        tasks: ['buildscripts']
+        tasks: ['buildscripts'],
       },
       styles:{
         files: ['src/styles/**/*.scss'],
-        tasks: ['buildstyles']
+        tasks: ['buildstyles'],
+      },
+      reload:{
+        files: ['dist/styles/**/*.css', 'dist/scripts/**/*.js'],
+        options:{
+          livereload: true,
+        }
       },
       images:{
         files: ['src/img/**/*.{png, jpg, gif}'],

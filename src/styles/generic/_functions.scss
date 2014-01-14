@@ -20,13 +20,13 @@
 // If you require to comma separate your list
 // rem-calc((16px, 32px, 48), 8px);
 
-@function convert-to-rem($value, $base-value: $doc-font-size)  {
+@function convert-to-rem($value, $base-value: 16)  {
   $value: strip-unit($value) / strip-unit($base-value) * 1rem;
   @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
   @return $value;
 }
 
-@function rem-calc($values, $base-value: $doc-font-size) {
+@function rem-calc($values, $base-value: 16) {
   $max: length($values);
 
   @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
