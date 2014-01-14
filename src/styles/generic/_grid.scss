@@ -1,25 +1,56 @@
-// The initial grid is all flexbox baby, but we include a fallback below
-// based on the no-flexbox class given by modernizr
-
-// Styles for everyone
-
-.row{
-	margin: 0 auto;
-	max-width: $row-width / $doc-font-size * 1em;
-}
-
-// Flexbox styles
-.row{
-	display: flex;
-	justify-content: space-around;
-	> div{
-		width: 100%;
-		padding: $grid-gutter / 2 / $doc-font-size * 1em;
+@if $use-border-box == true{
+	*{
+		box-sizing: border-box;
 	}
 }
 
 .row{
+	max-width: $row-width;
+	margin-left: auto;
+	margin-right: auto;
+	@extend %cf;
+}
+
+.columns{
+	float: left;
+	position: relative;
+	width: 100%;
+	margin-bottom: $doc-margin;
+	.row &{
+		padding-left: $grid-gutter;
+		padding-right: $grid-gutter;
+	}
+}
+
+
+@for $i from 1 through $grid-columns{
+
+	.sml-#{$i}.columns{
+		width: percentage($i / $grid-columns);
+
+	}
 
 }
 
-// Blah styles
+@for $i from 1 through $grid-columns{
+
+	.med-#{$i}.columns{
+		@include mq(med-up){
+			width: percentage($i / $grid-columns);
+		}
+	}
+
+}
+
+@for $i from 1 through $grid-columns{
+
+	.lrg-#{$i}.columns{
+		@include mq(lrg-up){
+			width: percentage($i / $grid-columns);
+		}
+	}
+
+}
+
+
+

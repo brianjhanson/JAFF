@@ -1,0 +1,9 @@
+.mb, .mb--1{
+	margin-bottom: $doc-margin;
+}
+
+@for $i from 2 through 4{
+	.mb--#{$i}{
+		margin-bottom: $i * $doc-margin;
+	}
+}

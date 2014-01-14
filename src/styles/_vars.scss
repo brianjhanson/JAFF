@@ -1,11 +1,21 @@
 // Colors
 	$selection-color: #b3d4fc;
+	$brand-color: #0386ad;
+	$primary-color: #089811;
 	$secondary-color: #e8e8e8;
+
+// Settings
+	$support-ie8: true;
+	$ie8-bp: 900px;
+	$use-reset: false;
+	$use-normalize: true;
+	$use-border-box: true;
 
 // Document Defaults
 	$doc-font-size: 16;
 	$doc-line-height: 1.6;
 	$doc-radius: 3;
+	$doc-margin: 1rem;
 
 // Modular Scale
 	$ms-primary: 16/$doc-font-size;
@@ -23,6 +33,7 @@
 		$super-size: ms(6);
 
 	// Usual suspects
+		// And the sizes handled by modular scale
 		$h1-size: ms(5);
 		$h2-size: ms(4);
 		$h3-size: ms(3);
@@ -35,6 +46,10 @@
 		$micro-size: $doc-font-size - 4px;
 
 // Grid
-	$row-width: 1000;
+	$row-width: 60rem;
 	$grid-columns: 12;
-	$grid-gutter: 30;
+	$grid-gutter: .5rem;
+
+// Breakpoints
+	$med-start: 500; // These can be in px because our mixin converts to ems
+	$lrg-start: 1024;

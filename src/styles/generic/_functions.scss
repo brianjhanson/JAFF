@@ -2,7 +2,7 @@
 // https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss
 
 // Required variables for this file:
-// $rem-base: 16px !default;
+// $doc-font-size: 16px !default;
 
 
 // It strips the unit of measure and returns it
@@ -20,13 +20,13 @@
 // If you require to comma separate your list
 // rem-calc((16px, 32px, 48), 8px);
 
-@function convert-to-rem($value, $base-value: $rem-base)  {
+@function convert-to-rem($value, $base-value: $doc-font-size)  {
   $value: strip-unit($value) / strip-unit($base-value) * 1rem;
   @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
   @return $value;
 }
 
-@function rem-calc($values, $base-value: $rem-base) {
+@function rem-calc($values, $base-value: $doc-font-size) {
   $max: length($values);
 
   @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }

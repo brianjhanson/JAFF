@@ -1,18 +1,20 @@
-// Great media query mixin taken from here
-// http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
+// The media query mixin
+$sml-end: $med-start - 1px;
+$med-end: $lrg-start - 1px;
 
-@mixin mq($point, $IE9: false, $query1: min, $query2: width) {
-  @if $IE9 == true{
-    .lt-ie9 & {
+@mixin mq($break) {
+  @if $break == med-up{
+    @media screen and (min-width: $med-start * 1px){
       @content;
     }
-    @media screen and (#{$query1}-#{$query2}: $point / $doc-font-size +em) {
-      @content;
+    @if $support-ie8 == true{
+      .lt-ie9 & {
+        @content;
+      }
     }
   }
-
-  @else {
-    @media screen and (#{$query1}-#{$query2}: $point / $doc-font-size +em) {
+  @else if $break == lrg-up{
+    @media screen and (min-width: $lrg-start * 1px){
       @content;
     }
   }

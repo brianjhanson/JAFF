@@ -2,7 +2,7 @@
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
 
-.hide {
+%hide {
   display: none !important;
   visibility: hidden;
 }
@@ -11,7 +11,7 @@
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
 
-.hide--accessible {
+%hide--accessible {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -27,8 +27,8 @@
  * when navigated to via the keyboard: h5bp.com/p
  */
 
-.hide--accessible.focusable:active,
-.hide--accessible.focusable:focus {
+%hide--accessible.focusable:active,
+%hide--accessible.focusable:focus {
   clip: auto;
   height: auto;
   margin: 0;
@@ -41,6 +41,6 @@
  * Hide visually and from screenreaders, but maintain layout
  */
 
-.hide--visual-only {
+%hide--visual-only {
   visibility: hidden;
 }

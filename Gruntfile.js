@@ -42,7 +42,7 @@ module.exports = function(grunt) {
       dist:{
         options: {
           trace: true,
-          style: 'compressed',
+          style: 'nested',
         },
         files: {
           'dist/styles/<%= pkg.name %>.min.css':'src/styles/app.scss'

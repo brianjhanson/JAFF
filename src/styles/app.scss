@@ -10,7 +10,7 @@
 // Did you write it? if not, put it here
 // ------------------------------------------------------------------------
 	@import "vendor/normalize";
-	// @import "vendor/reset";
+	@import "vendor/reset";
 
 // ------------------------------------------------------------------------
 // Generic
@@ -18,13 +18,15 @@
 // ------------------------------------------------------------------------
 
 	// Helpers
+	@import "generic/mixins";
+	@import "generic/functions";
 	@import "generic/clearfix";
 	@import "generic/hide";
 	@import "generic/selections";
 	@import "generic/image-replacement";
 
-	@import "generic/functions";
-	@import "generic/mixins";
+	@import "generic/margins";
+	@import "generic/panel";
 
 	// Layout
 	@import "generic/grid";
@@ -35,4 +37,4 @@
 // ------------------------------------------------------------------------
 
 	@import "objects/typography";
-	@import "objects/island";
+
