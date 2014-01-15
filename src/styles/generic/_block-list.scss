@@ -1,0 +1,16 @@
+.block-list{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	> li{
+		> a{
+			display: inline-block;
+		}
+	}
+}
+
+.block-list--inline{
+	> li{
+		display: inline-block;
+	}
+}

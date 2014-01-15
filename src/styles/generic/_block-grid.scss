@@ -1,0 +1,50 @@
+[class*="block-grid"]{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: justify;
+	&:after{
+		content: '';
+    display: inline-block;
+    width: 100%;
+	}
+	> li{
+		text-align: left;
+		display: inline-block;
+		vertical-align: top;
+		margin-bottom: $doc-margin;
+	}
+}
+
+@for $i from 1 through $grid-columns{
+	.sml-block-grid-#{$i}{
+		> li{
+			width: percentage(1 / $i) - $percentage-gutter;
+		}
+	}
+
+}
+
+@for $i from 1 through $grid-columns{
+
+	.med-block-grid-#{$i}{
+		> li{
+			@include mq(lrg-up){
+				width: percentage(1 / $i) - $percentage-gutter;
+			}
+		}
+	}
+
+}
+
+@for $i from 1 through $grid-columns{
+
+	.lrg-block-grid-#{$i}{
+		> li{
+			@include mq(lrg-up){
+				width: percentage(1 / $i) - $percentage-gutter;
+			}
+		}
+	}
+
+}

@@ -548,20 +548,35 @@ textarea {
 
 .panel {
   padding: 1em;
-  background-color: #e8e8e8; }
+  background-color: rgba(232, 232, 232, 0.6);
+  border: 1px solid #cfcfcf; }
 
 .panel--rounded {
-  border-radius: 3; }
+  border-radius: 3px; }
+
+img {
+  max-width: 100%; }
 
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .row {
+  width: 100%;
   max-width: 960px;
   max-width: 60rem;
-  margin-left: auto;
-  margin-right: auto; }
+  padding-left: 8px;
+  padding-left: 0.5rem;
+  padding-right: 8px;
+  padding-right: 0.5rem;
+  margin: 0 auto; }
+  .row .row, .row .row .row {
+    margin-left: -8px;
+    margin-left: -0.5rem;
+    margin-right: -8px;
+    margin-right: -0.5rem;
+    padding-left: 0;
+    padding-right: 0; }
 
 .columns {
   float: left;
@@ -730,6 +745,164 @@ textarea {
 @media screen and (min-width: 1024px) {
   .lrg-12.columns {
     width: 100%; } }
+
+[class*="block-grid"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: justify; }
+  [class*="block-grid"]:after {
+    content: '';
+    display: inline-block;
+    width: 100%; }
+  [class*="block-grid"] > li {
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 16px;
+    margin-bottom: 1rem; }
+
+.sml-block-grid-1 > li {
+  width: 98.33333%; }
+
+.sml-block-grid-2 > li {
+  width: 48.33333%; }
+
+.sml-block-grid-3 > li {
+  width: 31.66667%; }
+
+.sml-block-grid-4 > li {
+  width: 23.33333%; }
+
+.sml-block-grid-5 > li {
+  width: 18.33333%; }
+
+.sml-block-grid-6 > li {
+  width: 15.0%; }
+
+.sml-block-grid-7 > li {
+  width: 12.61905%; }
+
+.sml-block-grid-8 > li {
+  width: 10.83333%; }
+
+.sml-block-grid-9 > li {
+  width: 9.44444%; }
+
+.sml-block-grid-10 > li {
+  width: 8.33333%; }
+
+.sml-block-grid-11 > li {
+  width: 7.42424%; }
+
+.sml-block-grid-12 > li {
+  width: 6.66667%; }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-1 > li {
+    width: 98.33333%; } }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-2 > li {
+    width: 48.33333%; } }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-3 > li {
+    width: 31.66667%; } }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-4 > li {
+    width: 23.33333%; } }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-5 > li {
+    width: 18.33333%; } }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-6 > li {
+    width: 15.0%; } }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-7 > li {
+    width: 12.61905%; } }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-8 > li {
+    width: 10.83333%; } }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-9 > li {
+    width: 9.44444%; } }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-10 > li {
+    width: 8.33333%; } }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-11 > li {
+    width: 7.42424%; } }
+
+@media screen and (min-width: 1024px) {
+  .med-block-grid-12 > li {
+    width: 6.66667%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-1 > li {
+    width: 98.33333%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-2 > li {
+    width: 48.33333%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-3 > li {
+    width: 31.66667%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-4 > li {
+    width: 23.33333%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-5 > li {
+    width: 18.33333%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-6 > li {
+    width: 15.0%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-7 > li {
+    width: 12.61905%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-8 > li {
+    width: 10.83333%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-9 > li {
+    width: 9.44444%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-10 > li {
+    width: 8.33333%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-11 > li {
+    width: 7.42424%; } }
+
+@media screen and (min-width: 1024px) {
+  .lrg-block-grid-12 > li {
+    width: 6.66667%; } }
+
+.block-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .block-list > li > a {
+    display: inline-block; }
+
+.block-list--inline > li {
+  display: inline-block; }
 
 body {
   font-size: 16px;

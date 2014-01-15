@@ -1,6 +1,7 @@
 .panel{
 	padding: 1em;
-	background-color: $secondary-color;
+	background-color: fade-out($secondary-color, .4);
+	border: 1px solid darken($secondary-color, 10);
 }
 
 .panel--rounded{

@@ -132,7 +132,7 @@ module.exports = function(grunt) {
         tasks: ['buildstyles'],
       },
       reload:{
-        files: ['dist/styles/**/*.css', 'dist/scripts/**/*.js'],
+        files: ['dist/styles/**/*.css', 'dist/scripts/**/*.js', '**/*.html'],
         options:{
           livereload: true,
         }
